@@ -1,3 +1,6 @@
+<!--This project was made with the help of ChatGPT and Google AI OVerview. All parts of the code were tested and 
+understood.-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +8,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Dice Roller</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="main.js">
+    
 </head>
-<body>
-    <h1>Web Dice Roller</h1>
 
+<!--onload will automatically roll the dice the first time when the page is first loaded-->
+<body onload="rollDice()">
+    <div class="container">
+        <h1>Web Dice Roller for Yahtzee</h1>
+
+        <p class="instructrions">
+            This Web Dice Roller will simulating rolling five 6-sided dice for a Yahtzee game. To roll the dice for the 
+            game, click the “Roll” button or press “Enter”.
+
+        </p>
+
+        <!--A table is used to organize the results of each die. tr = row, th = header name, td = data-->
+        <table>
+            <tr>
+                <th>Die 1</th>
+                <th>Die 2</th>
+                <th>Die 3</th>
+                <th>Die 4</th>
+                <th>Die 5</th>
+
+            </tr>
+
+            <tr>
+                <!--input displays the dice number and readonly makes it so that users are not able to edit. This is 
+                done like this so that JavaScript can later contorl this-->
+
+                <td><input type="text" id="die1" readonly></td>
+                <td><input type="text" id="die2" readonly></td>
+                <td><input type="text" id="die3" readonly></td>
+                <td><input type="text" id="die4" readonly></td>
+                <td><input type="text" id="die5" readonly></td>
+
+            </tr>
+
+        </table>
+
+        <!--button to roll dice. autofocus makes it so that when the user presses the "Enter" key the dice will also 
+        roll-->
+        <button onclick="rollDice()" autofocus>
+            Roll
+        </button>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
